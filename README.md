@@ -3,3 +3,5 @@ paguina que sirva para interactúar con amantes de video juegos comunidad, usand
 
 
 primera prueba de sincronizacion vs code to Github
+
+probando la sinc de git hub to vs code
