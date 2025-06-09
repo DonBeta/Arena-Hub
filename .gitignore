@@ -1,0 +1,55 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+.pnpm-debug.log
+
+# Logs
+logs/
+*.log
+log.txt
+
+# Compiled output
+dist/
+build/
+
+# dotenv
+.env
+.env.*.local
+
+# IDEs/Editors
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Angular
+frontend/.angular/cache/
+frontend/.angular/
+frontend/.output/
+frontend/dist/
+frontend/tmp/
+
+# NestJS
+backend/dist/
+backend/.nestjs/
+
+# Coverage
+coverage/
+*.lcov
+
+# Mac-specific
+*.DS_Store
+.AppleDouble
+.LSOverride
+
+# Dev tunnel files (VS Code or ngrok)
+*.devtunnel.*
