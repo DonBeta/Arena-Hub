@@ -5,6 +5,8 @@ import Register from './pages/Register'
 import Profile from './pages/Profile'
 import Settings from './pages/Settings'
 import NotFound from './pages/NotFound'
+import Tournaments from './pages/Tournaments'
+import Dashboard from './pages/Dashboard';
 
 import Layout from './layouts/layout'
 
@@ -17,6 +19,8 @@ function App() {
         <Route path="register" element={<Register />} />
         <Route path="profile" element={<Profile />} />
         <Route path="settings" element={<Settings />} />
+        <Route path="tournaments" element={<Tournaments />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>
