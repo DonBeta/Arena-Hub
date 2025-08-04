@@ -5,10 +5,14 @@ import App from './App.jsx'
 
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 
+import { AuthProvider } from './context/AuthProvider.jsx';
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <AuthProvider>
+        <App />
+      </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>
-)
+);

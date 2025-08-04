@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/useAuth'; // Ajusta ruta si es necesario
 
 function Login() {
   const navigate = useNavigate();
+  const { login } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -16,8 +18,14 @@ function Login() {
     };
 
     if (email === dummyUser.email && password === dummyUser.password) {
-      localStorage.setItem('user', JSON.stringify({ email }));
-      navigate('/'); // Redirige directamente a Home
+      login({ email });
+
+      const welcomeShown = localStorage.getItem('welcomeShown');
+      if (!welcomeShown) {
+        navigate('/welcome'); // Redirige a página de bienvenida si no se ha mostrado
+      } else {
+        navigate('/'); // Redirige a Home si ya se mostró antes
+      }
     } else {
       alert('Credenciales incorrectas. Intenta de nuevo.');
     }
