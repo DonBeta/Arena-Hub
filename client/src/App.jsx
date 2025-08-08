@@ -9,6 +9,7 @@ import Tournaments from './pages/Tournaments'
 import Dashboard from './pages/Dashboard'
 import Welcome from './pages/Welcome';
 import CreateTournament from './pages/CreateTournament'
+import TournamentDetails from './pages/TournamentDetails'
 
 
 import Layout from './layouts/layout'
@@ -42,6 +43,11 @@ function App() {
         <Route path="tournaments/create" element={
           <PrivateRoute>
             <CreateTournament />
+          </PrivateRoute>
+        } />
+        <Route path="tournaments/:id" element={
+          <PrivateRoute>
+            <TournamentDetails />
           </PrivateRoute>
         } />
         <Route path="tournaments" element={<Tournaments />} />

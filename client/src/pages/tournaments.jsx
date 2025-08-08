@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'; // <-- añadimos Link para navegar a detalles
 
 const tournaments = [
   {
@@ -52,14 +53,25 @@ function Tournaments() {
       <div className="row">
         {tournaments.map((tournament) => (
           <div className="col-md-4 mb-4" key={tournament.id}>
-            <div className="card h-100">
+            <div className="card h-100 position-relative">
               <div className="card-body">
+                {/* Nombre como título (podemos convertirlo en enlace también) */}
                 <h5 className="card-title">{tournament.name}</h5>
                 <p className="card-text"><strong>Juego:</strong> {tournament.game}</p>
                 <p className="card-text"><strong>Fecha:</strong> {tournament.date}</p>
                 <p className="card-text"><strong>Participantes:</strong> {tournament.participants}</p>
               </div>
+
               <div className="card-footer text-center">
+                {/* Botón para ir a la página de detalles */}
+                <Link
+                  to={`/tournaments/${tournament.id}`}
+                  className="btn btn-outline-secondary me-2"
+                >
+                  Ver detalles
+                </Link>
+
+                {/* Botón Unirse (sigue existiendo y usa el estado local) */}
                 <button
                   className="btn btn-primary"
                   onClick={() => handleJoin(tournament)}
